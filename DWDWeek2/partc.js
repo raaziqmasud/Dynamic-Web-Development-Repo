@@ -1,6 +1,5 @@
 var express = require('express');
 var mustacheExpress = require('mustache-express');
-var fs = require('fs');
 var app = express()
 
 app.engine('html', mustacheExpress());
