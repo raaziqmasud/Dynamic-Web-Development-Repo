@@ -22,5 +22,5 @@ app.post('/answer', function(req, res){
 })
 
 
-app.listen(8000, function () {
-  console.log('port 8000 running')})
+app.listen(4000, function () {
+  console.log('port 4000 running')})
