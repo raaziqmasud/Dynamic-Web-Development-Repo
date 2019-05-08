@@ -1,0 +1,47 @@
+<html> 
+
+<head> Get Hip Questionnaire </head>
+
+<body>
+    <h1 class = "header">What's Your Name?</h1>
+    <form method="get" action="/name">
+      Name:
+      <input type = "text" name = "name">
+      <input type = "submit">
+    </form>
+
+    <h1 class = "header">How Old Are You?</h1>
+    <form method="get" action="/age">
+    <select name= "Age">
+        <option value="7-13">7-13</option>
+        <option value="14-18">14-18</option>
+        <option value="19-25">19-25</option>
+        <option value="25+">25+</option>
+      </select>
+      <button type="submit" name="submit" >Submit</button>
+    </form>
+
+      <h1 class = "header">Gender</h1>
+      <form method="get" action="/gender">
+      <select name= "Gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Non-Binary">Non-Binary</option>
+          <option value="I Do Not Want To Disclose">I Do Not Want To Disclose</option>
+        </select>
+        <button type="submit" name="submit" >Submit</button>
+      </form>
+
+      <h1 class = "header">Hip-Hop Enthusiast?</h1>
+      <form method="get" action="/q1">
+      <select name= "q1">
+          <option value="YES">YES</option>
+          <option value="NO">NO</option>
+        </select>
+        <button type="submit" name="submit" >Submit</button>
+      </form>
+</body>
+
+
+
+</html>
