@@ -186,99 +186,99 @@ var offsetX5h, offsetY5h;
 var offsetX6h, offsetY6h;
 
 function preload() {
-  logo = loadImage('Get-Hip-Logo.png');
+  logo = loadImage('/static/Get-Hip-Logo.png');
 
   //actual head bubbles
-  bardi = loadImage('bub10.png');
-  kl = loadImage('bub9.png');
-  mack = loadImage('bub4.png');
-  future = loadImage('bub8.png');
-  drake = loadImage('bub7.png');
-  fw = loadImage('bub6.png');
-  yg = loadImage('bub5.png');
-  lw = loadImage('bub3.png');
-  wiz = loadImage('bub2.png');
-  jay = loadImage('bub1.png');
+  bardi = loadImage('/static/bub10.png');
+  kl = loadImage('/static/bub9.png');
+  mack = loadImage('/static/bub4.png');
+  future = loadImage('/static/bub8.png');
+  drake = loadImage('/static/bub7.png');
+  fw = loadImage('/static/bub6.png');
+  yg = loadImage('/static/bub5.png');
+  lw = loadImage('/static/bub3.png');
+  wiz = loadImage('/static/bub2.png');
+  jay = loadImage('/static/bub1.png');
 
   //actual album boxes
-  iop = loadImage('box9.png');
-  damn = loadImage('box8.png');
-  wattba = loadImage('box7.png');
-  fetty = loadImage('box6.png');
-  krazy = loadImage('box5.png');
-  heist = loadImage('box4.png');
-  tc = loadImage('box3.png');
-  rp = loadImage('box2.png');
-  bp3 = loadImage('box1.png');
+  iop = loadImage('/static/box9.png');
+  damn = loadImage('/static/box8.png');
+  wattba = loadImage('/static/box7.png');
+  fetty = loadImage('/static/box6.png');
+  krazy = loadImage('/static/box5.png');
+  heist = loadImage('/static/box4.png');
+  tc = loadImage('/static/box3.png');
+  rp = loadImage('/static/box2.png');
+  bp3 = loadImage('/static/box1.png');
 
-  //testcorrect answers  
-  ye = loadImage('Kanye Head.png');
-  CD = loadImage('collee dropout.jpg');
+  // //testcorrect answers  
+  // ye = loadImage('Kanye Head.png');
+  // CD = loadImage('collee dropout.jpg');
 
-  //testincorrect answers
-  cardi = loadImage('cardi head.png');
+  // //testincorrect answers
+  // cardi = loadImage('cardi head.png');
 
 
-  lyte = loadImage('mc lyte transparent.png')
-  eot = loadImage('MC Lyte - Eyes On This.jpg');
+  // lyte = loadImage('mc lyte transparent.png')
+  // eot = loadImage('MC Lyte - Eyes On This.jpg');
 
-  buzz = loadSound('real buzz.mp3');
+  buzz = loadSound('/static/real buzz.mp3');
   buzz.loop = false;
-  ding = loadSound('Ding Sound Effect.mp3');
+  ding = loadSound('/static/Ding Sound Effect.mp3');
   ding.loop = false;
 
   //font
 
-  myr = loadFont('MyriadPro-Bold.otf')
+  myr = loadFont('/static/MyriadPro-Bold.otf')
 
 
   //sound and play button
   // jwalks = loadSound('jesus walks snippet.mp3');
 
-  ilike = loadSound('CardiSnippet.mp3');
-  button = createImg('playbutton.png');
+  ilike = loadSound('/static/CardiSnippet.mp3');
+  button = createImg('/static/playbutton.png');
   button.size(300, 300)
   button.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
   button.mousePressed(play)
 
-  empire = loadSound('HovSnippet.mp3');
-  button2 = createImg('playbutton.png');
+  empire = loadSound('/static/HovSnippet.mp3');
+  button2 = createImg('/static/playbutton.png');
   button2.size(300, 300)
   button2.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
   button2.mousePressed(play2)
 
-  humb = loadSound('humblesnippet.mp3');
-  button3 = createImg('playbutton.png');
+  humb = loadSound('/static/humblesnippet.mp3');
+  button3 = createImg('/static/playbutton.png');
   button3.size(300, 300)
   button3.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
   button3.mousePressed(play3)
 
-  motto = loadSound('mottosnippet.mp3');
-  button4 = createImg('playbutton.png');
+  motto = loadSound('/static/mottosnippet.mp3');
+  button4 = createImg('/static/playbutton.png');
   button4.size(300, 300)
   button4.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
   button4.mousePressed(play4)
 
-  thriftsh = loadSound('thriftsnippet.mp3');
-  button5 = createImg('playbutton.png');
+  thriftsh = loadSound('/static/thriftsnippet.mp3');
+  button5 = createImg('/static/playbutton.png');
   button5.size(300, 300)
   button5.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
   button5.mousePressed(play5)
 
-  black = loadSound('bandysnippet.mp3');
-  button6 = createImg('playbutton.png');
+  black = loadSound('/static/bandysnippet.mp3');
+  button6 = createImg('/static/playbutton.png');
   button6.size(300, 300)
   button6.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
   button6.mousePressed(play6)
 
-  trap = loadSound('trapqueensnippet.mp3');
-  button7 = createImg('playbutton.png');
+  trap = loadSound('/static/trapqueensnippet.mp3');
+  button7 = createImg('/static/playbutton.png');
   button7.size(300, 300)
   button7.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
   button7.mousePressed(play7)
 
-  hitta = loadSound('hittasnippet.mp3');
-  button8 = createImg('playbutton.png');
+  hitta = loadSound('/static/hittasnippet.mp3');
+  button8 = createImg('/static/playbutton.png');
   button8.size(300, 300)
   button8.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
   button8.mousePressed(play8)

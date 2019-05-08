@@ -1,8 +1,18 @@
 <html> 
 
-<head> Get Hip Questionnaire </head>
+<head> 
+    <script src="/static/p5.min.js"></script>
+    <script src="/static/p5.dom.min.js"></script>
+    <script src="/static/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <meta charset="utf-8">
+    
+Get Hip Questionnaire </head>
 
 <body>
+
+<script src="/static/sketch.js"></script>
+
     <h1 class = "header">What's Your Name?</h1>
     <form method="get" action="/name">
       Name:
@@ -21,16 +31,6 @@
       <button type="submit" name="submit" >Submit</button>
     </form>
 
-      <h1 class = "header">Gender</h1>
-      <form method="get" action="/gender">
-      <select name= "Gender">
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Non-Binary">Non-Binary</option>
-          <option value="I Do Not Want To Disclose">I Do Not Want To Disclose</option>
-        </select>
-        <button type="submit" name="submit" >Submit</button>
-      </form>
 
       <h1 class = "header">Hip-Hop Enthusiast?</h1>
       <form method="get" action="/q1">
@@ -40,6 +40,7 @@
         </select>
         <button type="submit" name="submit" >Submit</button>
       </form>
+
 </body>
 
 
