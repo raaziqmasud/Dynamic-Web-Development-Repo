@@ -6,22 +6,33 @@
     <script src="/static/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <meta charset="utf-8">
-    
-Get Hip Questionnaire </head>
+    <script src="/static/sketch.js"></script>
+ </head>
 
 <body>
 
-<script src="/static/sketch.js"></script>
+ <div id = "dir">PLAY THE GAME AND FILL OUT FORM BELOW</div> 
 
+<div id= "sketch-holder">
+</div id>
+
+<div id= "qt">
+
+  Get Hip Questionnaire
+
+</div>
+
+<div id= "d1">
     <h1 class = "header">What's Your Name?</h1>
-    <form method="get" action="/name">
+    <form method="post" action="/name">
       Name:
       <input type = "text" name = "name">
       <input type = "submit">
     </form>
-
+</div>
+<div id= "d2">
     <h1 class = "header">How Old Are You?</h1>
-    <form method="get" action="/age">
+    <form method="post" action="/age">
     <select name= "Age">
         <option value="7-13">7-13</option>
         <option value="14-18">14-18</option>
@@ -30,16 +41,18 @@ Get Hip Questionnaire </head>
       </select>
       <button type="submit" name="submit" >Submit</button>
     </form>
+  </div>
 
-
+  <div id= "d3">
       <h1 class = "header">Hip-Hop Enthusiast?</h1>
-      <form method="get" action="/q1">
+      <form method="post" action="/q1">
       <select name= "q1">
           <option value="YES">YES</option>
           <option value="NO">NO</option>
         </select>
         <button type="submit" name="submit" >Submit</button>
       </form>
+</div>
 
 </body>
 

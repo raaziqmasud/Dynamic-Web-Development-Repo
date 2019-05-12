@@ -1,7 +1,60 @@
+
+canvas {
+  display: block;
+  margin-left: 0;
+  border: 5px double #0c9247;
+}
+
 html, body {
   margin: 0;
   padding: 0;
 }
-canvas {
-  display: block;
+
+#dir{
+  text-align: center;
+  margin-left: 0;
+}
+
+#qt{
+  margin-top: 30px;
+  margin-left: 600px;
+  width: 10%;
+  border: 3px solid #0c9247;
+  padding: 10px;
+  text-align: center;
+}
+
+#d1{
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 0;
+  width: 25%;
+  border: 3px solid #0c9247;
+  padding: 10px;
+  text-align: center;
+
+  }
+  
+  #d2{
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: 500px;
+    width: 25%;
+    border: 3px solid #0c9247;
+    padding: 10px;
+    text-align: center;
+    }
+
+    #d3{
+      margin-top: 0px;
+      margin-bottom: 30px;
+      margin-left: 970px;
+      width: 25%;
+      border: 3px solid #0c9247;
+      padding: 10px;
+      text-align: center;
+      }
+
+.header{
+  font-size: 22;
 }

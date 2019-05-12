@@ -237,50 +237,50 @@ function preload() {
 
   ilike = loadSound('/static/CardiSnippet.mp3');
   button = createImg('/static/playbutton.png');
-  button.size(300, 300)
-  button.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
+  button.size(225, 225)
+  button.position(windowWidth / 2 + (windowWidth/2)/2-120, 150)
   button.mousePressed(play)
 
   empire = loadSound('/static/HovSnippet.mp3');
   button2 = createImg('/static/playbutton.png');
-  button2.size(300, 300)
-  button2.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
+  button2.size(225, 225)
+  button2.position(windowWidth / 2 + (windowWidth/2)/2-120, 150)
   button2.mousePressed(play2)
 
   humb = loadSound('/static/humblesnippet.mp3');
   button3 = createImg('/static/playbutton.png');
-  button3.size(300, 300)
-  button3.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
+  button3.size(225, 225)
+  button3.position(windowWidth / 2 + (windowWidth/2)/2-120, 150)
   button3.mousePressed(play3)
 
   motto = loadSound('/static/mottosnippet.mp3');
   button4 = createImg('/static/playbutton.png');
-  button4.size(300, 300)
-  button4.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
+  button4.size(225, 225)
+  button4.position(windowWidth / 2 + (windowWidth/2)/2-120, 150)
   button4.mousePressed(play4)
 
   thriftsh = loadSound('/static/thriftsnippet.mp3');
   button5 = createImg('/static/playbutton.png');
-  button5.size(300, 300)
-  button5.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
+  button5.size(225, 225)
+  button5.position(windowWidth / 2 + (windowWidth/2)/2-120, 150)
   button5.mousePressed(play5)
 
   black = loadSound('/static/bandysnippet.mp3');
   button6 = createImg('/static/playbutton.png');
-  button6.size(300, 300)
-  button6.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
+  button6.size(225, 225)
+  button6.position(windowWidth / 2 + (windowWidth/2)/2-120, 150)
   button6.mousePressed(play6)
 
   trap = loadSound('/static/trapqueensnippet.mp3');
   button7 = createImg('/static/playbutton.png');
-  button7.size(300, 300)
-  button7.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
+  button7.size(225, 225)
+  button7.position(windowWidth / 2 + (windowWidth/2)/2-120, 150)
   button7.mousePressed(play7)
 
   hitta = loadSound('/static/hittasnippet.mp3');
   button8 = createImg('/static/playbutton.png');
-  button8.size(300, 300)
-  button8.position(windowWidth / 2 + (windowWidth/2)/2-150, 175)
+  button8.size(225, 225)
+  button8.position(windowWidth / 2 + (windowWidth/2)/2-120, 150)
   button8.mousePressed(play8)
 }
 
@@ -381,6 +381,9 @@ function buzzer() {
 /////////SETUP
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
+  var canvas= createCanvas(windowWidth, windowHeight)
+  canvas.parent('sketch-holder')
 
   tracking = 1;
   // coordinates

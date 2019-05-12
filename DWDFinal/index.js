@@ -31,6 +31,11 @@ app.get('/', function (req, res) {
     res.render('index', {});
 })
 
+app.post('/age', function (req, res) {
+   var age= req.body.Age
+    res.render('index', {});
+})
+
 app.listen(process.env.PORT || 7000, function () {
     console.log('Example app listening on port 7000!')
 })
