@@ -1,0 +1,25 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "engines": {
+    "node": "10.14.2"
+  },
+  "description": "",
+  "main": "index",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "code": "^5.2.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mustache-express": "^1.2.8",
+    "node": "^10.14.2",
+    "node-modules": "^1.0.1",
+    "package-json": "^6.3.0",
+    "pg": "^7.11.0"
+  }
+}

@@ -25,18 +25,21 @@ html, body {
 }
 
 #d1{
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 20px;
+  margin-left: 500px;
   margin-right: 0;
   width: 25%;
+  height: 40%;
   border: 3px solid #0c9247;
   padding: 10px;
   text-align: center;
+  letter-spacing: 2 px;
+  line-height: 1.5;
 
   }
   
   #d2{
-    margin-top: 0px;
+    margin-top: 20px;
     margin-bottom: 30px;
     margin-left: 500px;
     width: 25%;
@@ -46,9 +49,9 @@ html, body {
     }
 
     #d3{
-      margin-top: 0px;
+      margin-top: 20px;
       margin-bottom: 30px;
-      margin-left: 970px;
+      margin-left: 500px;
       width: 25%;
       border: 3px solid #0c9247;
       padding: 10px;

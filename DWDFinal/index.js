@@ -6,34 +6,83 @@ var bodypars = require('body-parser')
 var urlencodedParser = bodypars.urlencoded({ extended: true });
 let url = require('url')
 let path = require('path')
-let { Client } = require('pg')
+let pg = require("pg");
+var { Client } = require('pg')
+
+var client2 = new Client({database: 'db1'})
+
+var client = new pg.Client({
+    user: "yourUser",
+    password: "yourPass",
+    database: "db1",
+    port: process.env.PORT,
+    host: "host.com",
+    ssl: true
+  });
+client.connect()
 
 app.use(cors())
 app.use('/static', express.static('MTT/public'));
 app.use(urlencodedParser);
 
-let client;
-
-if (process.env.DATABASE_URL){
-    client = new Client({connectionString: process.env.DATABASE_URL, ssl: true});
-  } else {
-    client = new Client({database: 'DWDForum'});
-  }
-  client.connect();
-
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 app.set('views', __dirname);
 
-
 app.get('/', function (req, res) {
     console.log('index is running!')
     res.render('index', {});
+
+    client2.query('SELECT * FROM users', (err, resSQL) => {
+        if (err) {
+          console.log(err.stack)
+        } else {
+            let someArray = resSQL.rows
+            res.render('index', {
+                someArray
+            });
+        }
+      })
+
 })
 
-app.post('/age', function (req, res) {
-   var age= req.body.Age
-    res.render('index', {});
+app.post('/here', function (req, res) {
+  
+    let name = req.body.name 
+  if (name===undefined){
+console.log("no name")
+} else {
+
+    client2.query('INSERT INTO users (name) VALUES (\'' + name + '\')', (err, res) => {
+        if (err) {
+          console.log(err.stack)
+        } else {
+            console.log('\'' + name + '\' posted successfully')
+        }
+      })
+
+      console.log('\'' + name + '\' posted successfully')
+}
+
+res.redirect('/')
+    console.log(name)
+
+
+let age = req.body.Age 
+  if (age===undefined){
+console.log("no age")
+} else {
+    console.log(age)
+}
+
+let rap = req.body.q1
+if (rap === undefined){
+    console.log("no answer for rap")
+} else {
+    console.log(rap)
+}
+
+
 })
 
 app.listen(process.env.PORT || 7000, function () {
