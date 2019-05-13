@@ -6,20 +6,16 @@ var bodypars = require('body-parser')
 var urlencodedParser = bodypars.urlencoded({ extended: true });
 let url = require('url')
 let path = require('path')
-let pg = require("pg");
 var { Client } = require('pg')
 
 var client2 = new Client({database: 'db1'})
+client2.connect()
 
-var client = new pg.Client({
-    user: "yourUser",
-    password: "yourPass",
-    database: "db1",
-    port: process.env.PORT,
-    host: "host.com",
-    ssl: true
+var client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
   });
-client.connect()
+
 
 app.use(cors())
 app.use('/static', express.static('MTT/public'));
@@ -31,24 +27,34 @@ app.set('views', __dirname);
 
 app.get('/', function (req, res) {
     console.log('index is running!')
-    res.render('index', {});
+    // res.render('index', {});
 
     client2.query('SELECT * FROM users', (err, resSQL) => {
         if (err) {
           console.log(err.stack)
         } else {
-            let someArray = resSQL.rows
+            let theArray = resSQL.rows
             res.render('index', {
-                someArray
+                theArray
             });
         }
       })
 
+      client.query('SELECT * FROM users', (err, resSQL) => {
+        if (err) {
+          console.log(err.stack)
+        } else {
+            let theArray = resSQL.rows
+            res.render('index', {
+                theArray
+            });
+        }
+      })
 })
 
 app.post('/here', function (req, res) {
   
-    let name = req.body.name 
+let name = req.body.name 
   if (name===undefined){
 console.log("no name")
 } else {
@@ -61,11 +67,18 @@ console.log("no name")
         }
       })
 
+      client.query('INSERT INTO users (name) VALUES (\'' + name + '\')', (err, res) => {
+        if (err) {
+          console.log(err.stack)
+        } else {
+            console.log('\'' + name + '\' posted successfully')
+        }
+      })
+
       console.log('\'' + name + '\' posted successfully')
 }
 
 res.redirect('/')
-    console.log(name)
 
 
 let age = req.body.Age 
