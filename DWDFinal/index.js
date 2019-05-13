@@ -95,6 +95,14 @@ console.log("no age")
         }
       })
 
+      client.query('INSERT INTO users (age) VALUES (\'' + age + '\')', (err, res) => {
+        if (err) {
+          console.log(err.stack)
+        } else {
+            console.log('\'' + age + '\' posted successfully')
+        }
+      })
+
     console.log(age)
 }
 
@@ -104,6 +112,14 @@ if (rap === undefined){
 } else {
     console.log(rap)
     client2.query('INSERT INTO users (email) VALUES (\'' + rap + '\')', (err, res) => {
+        if (err) {
+          console.log(err.stack)
+        } else {
+            console.log('\'' + rap + '\' posted successfully')
+        }
+      })
+
+      client2.query('INSERT INTO users (email) VALUES (\'' + rap + '\')', (err, res) => {
         if (err) {
           console.log(err.stack)
         } else {
