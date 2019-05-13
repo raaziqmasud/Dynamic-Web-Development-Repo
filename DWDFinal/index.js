@@ -27,16 +27,16 @@ app.set('views', __dirname);
 
 app.get('/', function (req, res) {
     console.log('index is running!')
-    // res.render('index', {});
+    res.render('index', {});
 
     client2.query('SELECT * FROM users', (err, resSQL) => {
         if (err) {
           console.log(err.stack)
         } else {
             let theArray = resSQL.rows
-            res.render('index', {
-                theArray
-            });
+            // res.render('index', {
+            //     theArray
+            // });
         }
       })
 
@@ -45,9 +45,9 @@ app.get('/', function (req, res) {
           console.log(err.stack)
         } else {
             let theArray = resSQL.rows
-            res.render('index', {
-                theArray
-            });
+            // res.render('index', {
+            //     theArray
+            // });
         }
       })
 })
