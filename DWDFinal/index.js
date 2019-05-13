@@ -7,14 +7,15 @@ var urlencodedParser = bodypars.urlencoded({ extended: true });
 let url = require('url')
 let path = require('path')
 var { Client } = require('pg')
+var client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
+  });
+client.connect()
 
 var client2 = new Client({database: 'db1'})
 client2.connect()
 
-var client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true,
-  });
 
 
 app.use(cors())
@@ -28,6 +29,7 @@ app.set('views', __dirname);
 app.get('/', function (req, res) {
     console.log('index is running!')
     res.render('index', {});
+    
 
     client2.query('SELECT * FROM users', (err, resSQL) => {
         if (err) {
@@ -78,22 +80,39 @@ console.log("no name")
       console.log('\'' + name + '\' posted successfully')
 }
 
-res.redirect('/')
 
 
-let age = req.body.Age 
+
+let age = req.body.age 
   if (age===undefined){
 console.log("no age")
 } else {
+    client2.query('INSERT INTO users (age) VALUES (\'' + age + '\')', (err, res) => {
+        if (err) {
+          console.log(err.stack)
+        } else {
+            console.log('\'' + age + '\' posted successfully')
+        }
+      })
+
     console.log(age)
 }
 
-let rap = req.body.q1
+let rap = req.body.email
 if (rap === undefined){
     console.log("no answer for rap")
 } else {
     console.log(rap)
+    client2.query('INSERT INTO users (email) VALUES (\'' + rap + '\')', (err, res) => {
+        if (err) {
+          console.log(err.stack)
+        } else {
+            console.log('\'' + rap + '\' posted successfully')
+        }
+      })
 }
+
+res.redirect('/')
 
 
 })
