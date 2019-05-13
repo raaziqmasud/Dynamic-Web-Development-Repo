@@ -119,7 +119,7 @@ if (rap === undefined){
         }
       })
 
-      client2.query('INSERT INTO users (email) VALUES (\'' + rap + '\')', (err, res) => {
+      client.query('INSERT INTO users (email) VALUES (\'' + rap + '\')', (err, res) => {
         if (err) {
           console.log(err.stack)
         } else {
